@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Slides</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .slide-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 0.5rem solid;
+            border-color: #4BB3FD;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .text-blue-primary {
+            color: #00487C;
+        }
+        .chart-container {
+            position: relative;
+            height: 256px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="flex flex-col min-h-screen">
+        <header class="text-center p-6 md:p-8 bg-white border-b border-gray-200">
+            <h1 class="text-4xl font-black text-blue-primary text-shadow tracking-tight">Cap Projets 4A 2025-2026</h1>
+            <p class="mt-2 text-lg text-[#00509D] max-w-3xl mx-auto">
+                L'Ingénierie du Numérique au service des Grands Défis.
+            </p>
+        </header>
+
+        <main class="flex-grow p-4 md:p-8 overflow-y-auto">
+            <div id="content-container" class="w-full max-w-4xl mx-auto space-y-8">
+                
+                <!-- Slide 0: Introduction -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
+                    <h2 class="text-3xl font-bold text-blue-primary mb-4">Le Rôle d'un Ingénieur du Numérique Utile</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Le numérique n'est pas un domaine isolé. Bien maîtrisé, il peut être une discipline permetant de relever les défis du XXIe siècle : transformer l'agriculture, rendre la santé plus accessible, concevoir un habitat plus durable, fluidifier nos mobilités, protéger la citoyenneté face à la désinformation et optimiser notre usage de l'énergie.
+                    </p>
+                </div>
+
+                <!-- Slide 1: Agriculture et alimentation -->
+                <div class="bg-white rounded-2xl shadow-xl p-10 md:p-14">
+                    <h2 class="text-3xl font-bold text-blue-primary mb-6 text-center">1. Agriculture & Alimentation 🌾</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="slide-card border-l-8 border-[#4BB3FD]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">Le Défi</h3>
+                            <p class="text-gray-600 mb-2">Nourrir une population mondiale croissante tout en s'adaptant au changement climatique et en assurant la souveraineté alimentaire.</p>
+                        </div>
+                         <div class="slide-card border-l-8 border-[#0496FF]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">L'Impact Positif</h3>
+                            <p class="text-gray-600 mb-2">La souveraineté alimentaire est renforcée, la productivité agricole est optimisée et la résilience face au climat est accrue. On réduit l'empreinte environnementale tout en assurant une juste rémunération pour les agriculteurs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Santé -->
+                <div class="bg-white rounded-2xl shadow-xl p-10 md:p-14">
+                    <h2 class="text-3xl font-bold text-blue-primary mb-6 text-center">2. Santé ❤️</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="slide-card border-l-8 border-[#4BB3FD]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">Le Défi</h3>
+                            <p class="text-gray-600 mb-2">Réduire les inégalités d'accès aux soins, notamment dans les "déserts médicaux" et pour les patients isolés.</p>
+                        </div>
+                        <div class="slide-card border-l-8 border-[#0496FF]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">L'Impact Positif</h3>
+                            <p class="text-gray-600 mb-2">L'accès aux soins est démocratisé, la prévention est renforcée et les coûts sont optimisés. On améliore la qualité de vie des patients et on soulage les infrastructures de santé traditionnelles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Habitat -->
+                <div class="bg-white rounded-2xl shadow-xl p-10 md:p-14">
+                    <h2 class="text-3xl font-bold text-blue-primary mb-6 text-center">3. Habitat 🏠</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="slide-card border-l-8 border-[#4BB3FD]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">Le Défi</h3>
+                            <p class="text-gray-600 mb-2">Garantir un logement durable et accessible à tous, tout en décarbonant le secteur du bâtiment et en gérant l'empreinte numérique.</p>
+                        </div>
+                        <div class="slide-card border-l-8 border-[#0496FF]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">L'Impact Positif</h3>
+                            <p class="text-gray-600 mb-2">Les bâtiments deviennent plus économes en énergie et plus intelligents, ce qui réduit leur empreinte carbone et les coûts pour les habitants. On favorise l'accès au logement pour les populations vulnérables.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Mobilité -->
+                <div class="bg-white rounded-2xl shadow-xl p-10 md:p-14">
+                    <h2 class="text-3xl font-bold text-blue-primary mb-6 text-center">4. Mobilité 🚗</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="slide-card border-l-8 border-[#4BB3FD]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">Le Défi</h3>
+                            <p class="text-gray-600 mb-2">Repenser les trajets du quotidien pour les rendre plus fluides, plus propres et plus accessibles.</p>
+                        </div>
+                        <div class="slide-card border-l-8 border-[#0496FF]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">L'Impact Positif</h3>
+                            <p class="text-gray-600 mb-2">La pollution et la congestion sont réduites, les temps de trajet sont optimisés et la qualité de vie en milieu urbain est améliorée. On favorise des modes de transport plus durables et inclusifs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Citoyenneté et politique -->
+                <div class="bg-white rounded-2xl shadow-xl p-10 md:p-14">
+                    <h2 class="text-3xl font-bold text-blue-primary mb-6 text-center">5. Citoyenneté & Politique 🗳️</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="slide-card border-l-8 border-[#4BB3FD]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">Le Défi</h3>
+                            <p class="text-gray-600 mb-2">Lutter contre la désinformation pour renforcer la confiance dans la démocratie et les institutions publiques.</p>
+                        </div>
+                        <div class="slide-card border-l-8 border-[#0496FF]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">L'Impact Positif</h3>
+                            <p class="text-gray-600 mb-2">Le débat public devient plus sain, l'accès à une information fiable est facilité et la confiance des citoyens dans le processus démocratique est renforcée. On protège la liberté d'expression en luttant contre la manipulation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 6: Énergie -->
+                <div class="bg-white rounded-2xl shadow-xl p-10 md:p-14">
+                    <h2 class="text-3xl font-bold text-blue-primary mb-6 text-center">6. Énergie ⚡️</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="slide-card border-l-8 border-[#4BB3FD]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">Le Défi</h3>
+                            <p class="text-gray-600 mb-2">Accélérer la transition énergétique en optimisant la production et la consommation, face à la consommation croissante du numérique.</p>
+                        </div>
+                        <div class="slide-card border-l-8 border-[#0496FF]">
+                            <h3 class="text-xl font-bold text-[#027BCE] mb-2">L'Impact Positif</h3>
+                            <p class="text-gray-600 mb-2">Le déploiement des énergies renouvelables est accéléré, la consommation d'énergie est optimisée et l'efficacité énergétique globale est améliorée. On contribue directement à la réduction de l'empreinte carbone et à la souveraineté énergétique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- LLM Feature for Idea Generation -->
+        <section class="my-8 p-6 md:p-8 bg-white rounded-2xl shadow-xl mx-4 md:mx-auto max-w-4xl border-l-8 border-[#4BB3FD]">
+            <h2 class="text-2xl font-bold text-blue-primary mb-4">✨ Générateur d'Idées de Projets ✨</h2>
+            <p class="text-gray-600 mb-4">
+                Sélectionnez un thème pour obtenir des pistes de projets concrètes, propulsées par l'intelligence artificielle.
+            </p>
+            <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                <select id="theme-selector" class="flex-grow w-full md:w-auto p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0496FF] transition-all">
+                    <option value="Agriculture et alimentation">Agriculture & Alimentation</option>
+                    <option value="Santé">Santé</option>
+                    <option value="Habitat">Habitat</option>
+                    <option value="Mobilité">Mobilité</option>
+                    <option value="Citoyenneté et politique">Citoyenneté & Politique</option>
+                    <option value="Energie">Énergie</option>
+                </select>
+                <button id="generate-btn" class="w-full md:w-auto bg-[#00509D] text-white font-bold py-2 px-6 rounded-full shadow-lg hover:bg-[#00487C] transition-colors duration-300">
+                    Générer des Idées
+                </button>
+            </div>
+            <div id="loading-spinner" class="mt-4 hidden text-center text-gray-500">
+                <p>Chargement en cours...</p>
+            </div>
+            <div id="ideas-output" class="mt-6 space-y-4">
+                <!-- Generated ideas will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Conclusion moved to the end -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center mx-4 md:mx-auto max-w-4xl my-8">
+            <h2 class="text-3xl font-bold text-blue-primary mb-4">Conclusion : Agir pour un Impact Durable</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+                En tant que futurs ingénieurs, votre responsabilité est de concevoir des solutions qui non seulement fonctionnent, mais qui sont également éthiques, durables et respectueuses de l'environnement.
+            </p>
+            <p class="text-lg font-bold text-[#00509D] mt-6">
+                Les défis sont immenses, les opportunités le sont tout autant.
+            </p>
+        </div>
+
+        <footer class="py-4 text-center text-sm text-gray-500">
+            <p>© 2024 École d'Ingénieurs. Tous droits réservés.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const themeSelector = document.getElementById('theme-selector');
+        const generateBtn = document.getElementById('generate-btn');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const ideasOutput = document.getElementById('ideas-output');
+
+        const apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxx";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        generateBtn.addEventListener('click', async () => {
+            const selectedTheme = themeSelector.value;
+            loadingSpinner.classList.remove('hidden');
+            generateBtn.disabled = true;
+            ideasOutput.innerHTML = '';
+
+            try {
+                const userPrompt = `Génère 3 idées de projets informatiques détaillées pour une équipe de 6 étudiants sur 11 semaines, basées sur le thème "${selectedTheme}". Réponds entièrement en français. Pour chaque idée, fournis : 
+                    1. une phrase inspirante (clé: "idea").
+                    2. le problème à résoudre (clé: "problemeAResoudre").
+                    3. un descriptif détaillée des objectifs du projet (clé: "descriptifObjectifs").
+                    4. les livrables attendus (gestion de projet et techniques) sous forme de liste (clé: "livrablesAttendus").
+                    5. l'estimation des charges et compétences requises par rôle et les principales technologies utilisables (clé: "technologies").
+                    6. une estimation de la répartition des charges en pourcentage pour les domaines suivants: Software Engineering, IA et Data Science, IoT et Capteurs, Cybersécurité, et Réalité Virtuelle et Systèmes Immersifs (clé: "distribution"). La somme des pourcentages doit être égale à 100.
+                    7. une explication précise de cette répartition (clé: "explicationDistribution").
+                    8. un planning sur 11 semaines pour une équipe de 6 étudiants, décomposé par phase majeure du projet (clé: "planning11Semaines").
+                    Fournis la réponse sous forme de tableau JSON, en utilisant la clé "projects".`;
+                
+                const payload = {
+                    contents: [{ parts: [{ text: userPrompt }] }],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: {
+                            type: "OBJECT",
+                            properties: {
+                                "projects": {
+                                    type: "ARRAY",
+                                    items: {
+                                        type: "OBJECT",
+                                        properties: {
+                                            "idea": { "type": "STRING" },
+                                            "problemeAResoudre": { "type": "STRING" },
+                                            "descriptifObjectifs": { "type": "STRING" },
+                                            "livrablesAttendus": { "type": "ARRAY", "items": { "type": "STRING" } },
+                                            "technologies": { "type": "STRING" },
+                                            "distribution": { 
+                                                type: "OBJECT",
+                                                properties: {
+                                                    "Software Engineering": { "type": "NUMBER" },
+                                                    "IA et Data Science": { "type": "NUMBER" },
+                                                    "IoT et Capteurs": { "type": "NUMBER" },
+                                                    "Cybersécurité": { "type": "NUMBER" },
+                                                    "Réalité Virtuelle et Systèmes Immersifs": { "type": "NUMBER" }
+                                                }
+                                            },
+                                            "explicationDistribution": { "type": "STRING" },
+                                            "planning11Semaines": { "type": "ARRAY", "items": { "type": "STRING" } }
+                                        },
+                                        "propertyOrdering": ["idea", "problemeAResoudre", "descriptifObjectifs", "livrablesAttendus", "technologies", "distribution", "explicationDistribution", "planning11Semaines"]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                let jsonText;
+                try {
+                    jsonText = result.candidates[0].content.parts[0].text;
+                } catch (error) {
+                    throw new Error('Le format de la réponse de l\'API est invalide ou incomplet.');
+                }
+                
+                let parsedJson;
+                try {
+                    parsedJson = JSON.parse(jsonText);
+                } catch (error) {
+                    throw new Error('La réponse de l\'API n\'est pas un JSON valide.');
+                }
+
+                const projects = parsedJson.projects;
+
+                if (projects && Array.isArray(projects)) {
+                    projects.forEach((project, index) => {
+                        const projectCard = document.createElement('div');
+                        projectCard.classList.add('bg-gray-100', 'p-6', 'rounded-lg', 'shadow-sm', 'space-y-4', 'border-l-4', 'border-[#0496FF]', 'hover:bg-gray-200', 'transition-colors');
+                        projectCard.innerHTML = `
+                            <p class="font-bold text-lg text-[#00509D] mb-2">${project.idea}</p>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gray-600 uppercase tracking-wide">Problème à Résoudre</h4>
+                                <p class="text-sm text-gray-700 mt-1">${project.problemeAResoudre}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gray-600 uppercase tracking-wide">Descriptif des Objectifs</h4>
+                                <p class="text-sm text-gray-700 mt-1">${project.descriptifObjectifs}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gray-600 uppercase tracking-wide">Livrables Attendus</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-700 mt-1 space-y-1">
+                                    ${project.livrablesAttendus.map(item => `<li>${item}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm text-gray-600 uppercase tracking-wide">Technologies principales</h4>
+                                <p class="text-sm text-gray-700 mt-1">${project.technologies}</p>
+                            </div>
+                            <div class="mt-4">
+                                <h4 class="font-semibold text-sm text-gray-600 uppercase tracking-wide">Répartition des charges par domaine</h4>
+                                <div class="chart-container mt-2">
+                                    <canvas id="chart-${index}"></canvas>
+                                </div>
+                                <p class="text-sm text-gray-700 mt-2">${project.explicationDistribution}</p>
+                            </div>
+                            <div class="mt-4">
+                                <h4 class="font-semibold text-sm text-gray-600 uppercase tracking-wide">Planning sur 11 Semaines</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-700 mt-1 space-y-1">
+                                    ${project.planning11Semaines.map(item => `<li>${item}</li>`).join('')}
+                                </ul>
+                            </div>
+                        `;
+                        ideasOutput.appendChild(projectCard);
+
+                        const ctx = document.getElementById(`chart-${index}`).getContext('2d');
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: Object.keys(project.distribution),
+                                datasets: [{
+                                    label: '% de charge',
+                                    data: Object.values(project.distribution),
+                                    backgroundColor: [
+                                        'rgba(4, 150, 255, 0.6)',
+                                        'rgba(2, 123, 206, 0.6)',
+                                        'rgba(75, 179, 253, 0.6)',
+                                        'rgba(0, 80, 157, 0.6)',
+                                        'rgba(0, 72, 124, 0.6)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(4, 150, 255, 1)',
+                                        'rgba(2, 123, 206, 1)',
+                                        'rgba(75, 179, 253, 1)',
+                                        'rgba(0, 80, 157, 1)',
+                                        'rgba(0, 72, 124, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: {
+                                            callback: function(value) {
+                                                return value + '%';
+                                            }
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: { display: false }
+                                }
+                            }
+                        });
+                    });
+                } else {
+                    ideasOutput.innerHTML = `<p class="text-red-500">Erreur : Les idées générées ne sont pas au bon format.</p>`;
+                }
+            } catch (error) {
+                if (error.message.includes('401')) {
+                     ideasOutput.innerHTML = `<p class="text-red-500">Une erreur d'authentification est survenue. L'accès à l'API est refusé. Pour que l'application fonctionne, veuillez insérer votre propre clé d'API à la ligne 'const apiKey = "";'.</p>`;
+                } else {
+                    ideasOutput.innerHTML = `<p class="text-red-500">Une erreur s'est produite lors de la génération des idées : ${error.message}. Veuillez réessayer.</p>`;
+                }
+                console.error('Erreur:', error);
+            } finally {
+                loadingSpinner.classList.add('hidden');
+                generateBtn.disabled = false;
+            }
+        });
+
+    </script>
+</body>
+</html>
