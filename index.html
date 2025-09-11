@@ -154,7 +154,7 @@
         
         <!-- LLM Feature for Idea Generation -->
         <section class="my-8 p-6 md:p-8 bg-white rounded-2xl shadow-xl mx-4 md:mx-auto max-w-4xl border-l-8 border-[#4BB3FD]">
-            <h2 class="text-2xl font-bold text-blue-primary mb-4">✨ Générateur d'Idées de Projets ✨</h2>
+            <h2 class="text-2xl font-bold text-blue-primary mb-4">✨ Générateur d'idées de projets ✨</h2>
             <p class="text-gray-600 mb-4">
                 Sélectionnez un thème pour obtenir des pistes de projets concrètes (Générées par IA).
             </p>
@@ -191,7 +191,7 @@
         </div>
 
         <footer class="py-4 text-center text-sm text-gray-500">
-            <p>© 2024 École d'Ingénieurs. Tous droits réservés.</p>
+            <p>© 2025 - 2026 Esiea École d'Ingénieurs. Tous droits réservés.</p>
         </footer>
 
     </div>
@@ -202,7 +202,7 @@
         const loadingSpinner = document.getElementById('loading-spinner');
         const ideasOutput = document.getElementById('ideas-output');
 
-        // L'URL pointe maintenant vers votre fonction Vercel
+        // L'URL pointe vers le backend Vercel hébergeant l'API d'authentification à Gemini
         const apiUrl = 'https://generateur-de-projets.vercel.app/api/generate-ideas';
 
         generateBtn.addEventListener('click', async () => {
@@ -219,7 +219,7 @@
                     4. les livrables attendus (gestion de projet et techniques) sous forme de liste (clé: "livrablesAttendus").
                     5. l'estimation des charges et compétences requises par rôle et les principales technologies utilisables (clé: "technologies").
                     6. une estimation de la répartition des charges en pourcentage pour les domaines suivants: Software Engineering, IA et Data Science, IoT et Capteurs, Cybersécurité, et Réalité Virtuelle et Systèmes Immersifs (clé: "distribution"). La somme des pourcentages doit être égale à 100.
-                    7. une explication précise de cette répartition (clé: "explicationDistribution").
+                    7. une explication précise et argumentée de cette répartition (clé: "explicationDistribution").
                     8. un planning sur 11 semaines pour une équipe de 6 étudiants, décomposé par phase majeure du projet (clé: "planning11Semaines").
                     Fournis la réponse sous forme de tableau JSON, en utilisant la clé "projects".`;
                 
