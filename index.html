@@ -42,7 +42,7 @@
         <header class="flex flex-col items-center md:flex-row md:justify-center p-6 md:p-8 bg-white border-b border-gray-200 gap-4 md:gap-8">
             <img src="https://www.esiea.fr/wp-content/uploads/2024/11/Group-13.svg" alt="Logo ESIEA" class="h-16 w-auto mb-2 md:mb-0 md:mr-6" style="max-width:120px;" loading="lazy">
             <div class="text-center md:text-left">
-                <h1 class="text-4xl font-black text-blue-primary text-shadow tracking-tight">Générateur d'idées de projet</h1>
+                <h1 class="text-4xl font-black text-blue-primary text-shadow tracking-tight">Générateur d'idées de projets</h1>
                 <p class="mt-2 text-lg text-[#00509D] max-w-3xl mx-auto md:mx-0">
                     Cap Projets 4A 2025-2026.
                 </p>
@@ -63,7 +63,7 @@
                                 <!-- Carrousel Thèmes (HTML/CSS/JS natif) -->
                                 <div class="relative w-full max-w-4xl mx-auto">
                                     <div id="carousel-themes" class="overflow-x-hidden w-full">
-                                           <div class="flex transition-transform duration-500" id="carousel-inner" style="overflow-x:hidden;">
+                                        <div class="flex transition-transform duration-500 min-w-0" id="carousel-inner" style="overflow-x:hidden;">
                                                                                     <!-- Slide 1 -->
                                                                                     <div class="w-full shrink-0 min-w-full px-2" style="flex: 0 0 100%;">
                                                                                            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col items-center gap-6" style="flex: 0 0 100%;">
@@ -395,7 +395,7 @@
             }
 
             function updateCarousel() {
-                carouselInner.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
+                carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
             }
 
             prevBtn.addEventListener('click', () => {
