@@ -76,7 +76,7 @@ Si vous souhaitez contribuer à ce projet, n'hésitez pas à ouvrir des *issues*
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Pour plus d'informations, consultez le fichier `LICENSE`.
+Ce projet est sous licence MIT. Pour plus d'informations, consultez le fichier `LICENCE`.
 
 ---
 
