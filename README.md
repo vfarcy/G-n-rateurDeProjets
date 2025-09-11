@@ -38,6 +38,7 @@ Suivez ces étapes pour démarrer le projet sur votre machine locale.
 * Un navigateur web moderne (Chrome, Firefox, Edge, etc.).
 * Une clé d'API pour le modèle Gemini de Google. Vous pouvez l'obtenir via la console Google AI Studio.
 
+
 ### Installation
 
 1.  **Cloner le dépôt :**
@@ -46,19 +47,21 @@ Suivez ces étapes pour démarrer le projet sur votre machine locale.
     cd votre-depot
     ```
 
-2.  **Configuration de la clé d'API :**
-    Ouvrez le fichier `index.html` dans votre éditeur de code. Localisez la ligne suivante dans le bloc `<script>` :
-    ```javascript
-    const apiKey = "";
-    ```
-    Remplacez le guillemet vide par votre clé d'API. Par exemple :
-    ```javascript
-    const apiKey = "VOTRE_CLÉ_API_ICI";
-    ```
-    **Attention :** Ne partagez jamais votre clé d'API. Pour une application de production, il est fortement recommandé d'utiliser un serveur proxy pour sécuriser cette information.
+2.  **Déploiement de l'API sur Vercel.com (gestion sécurisée de la clé API) :**
+    - Rendez-vous sur [vercel.com](https://vercel.com/) et importez ce projet (ou le dossier `api/`).
+    - Dans le tableau de bord Vercel, accédez à l'onglet **Settings > Environment Variables** de votre projet.
+    - Ajoutez une variable d'environnement nommée `GEMINI_API_KEY` et collez-y votre clé API Gemini (obtenue via Google AI Studio).
+    - Déployez le projet. L'API sera alors accessible à l'adresse `https://votre-projet.vercel.app/api/generate-ideas` et la clé ne sera jamais exposée côté client.
+    - **Ne commitez jamais votre clé API dans le code source.**
 
-3.  **Lancer l'application :**
-    Ouvrez simplement le fichier `index.html` dans votre navigateur web.
+3.  **Configuration du front-end :**
+    - Ouvrez le fichier `index.html` et vérifiez que l'URL de l'API (`apiUrl`) pointe bien vers votre déploiement Vercel, par exemple :
+      ```javascript
+      const apiUrl = 'https://votre-projet.vercel.app/api/generate-ideas';
+      ```
+
+4.  **Lancer l'application :**
+    - Ouvrez simplement le fichier `index.html` dans votre navigateur web.
 
 ---
 
