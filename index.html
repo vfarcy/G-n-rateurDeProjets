@@ -380,18 +380,18 @@ document.getElementById('carousel-next').onclick = function() {
 
                         const ctx = document.getElementById(`chart-${index}`).getContext('2d');
                         new Chart(ctx, {
-                            type: 'bar',
+                            type: 'pie',
                             data: {
                                 labels: Object.keys(project.distribution),
                                 datasets: [{
                                     label: '% de charge',
                                     data: Object.values(project.distribution),
                                     backgroundColor: [
-                                        'rgba(4, 150, 255, 0.6)',
-                                        'rgba(2, 123, 206, 0.6)',
-                                        'rgba(75, 179, 253, 0.6)',
-                                        'rgba(0, 80, 157, 0.6)',
-                                        'rgba(0, 72, 124, 0.6)'
+                                        'rgba(4, 150, 255, 0.7)',
+                                        'rgba(2, 123, 206, 0.7)',
+                                        'rgba(75, 179, 253, 0.7)',
+                                        'rgba(0, 80, 157, 0.7)',
+                                        'rgba(0, 72, 124, 0.7)'
                                     ],
                                     borderColor: [
                                         'rgba(4, 150, 255, 1)',
@@ -406,18 +406,8 @@ document.getElementById('carousel-next').onclick = function() {
                             options: {
                                 responsive: true,
                                 maintainAspectRatio: false,
-                                scales: {
-                                    y: {
-                                        beginAtZero: true,
-                                        ticks: {
-                                            callback: function(value) {
-                                                return value + '%';
-                                            }
-                                        }
-                                    }
-                                },
                                 plugins: {
-                                    legend: { display: false }
+                                    legend: { display: true, position: 'bottom' }
                                 }
                             }
                         });
